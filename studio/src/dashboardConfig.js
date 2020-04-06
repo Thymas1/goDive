@@ -1,6 +1,6 @@
 export default {
   widgets: [
-    { name: 'structure-menu' },
+    {name: 'structure-menu'},
     {
       name: 'project-info',
       options: {
@@ -19,7 +19,7 @@ export default {
                 },
                 {
                   buildHookId: '5e8a66381d29989029470de6',
-                  title: 'Blog Website',
+                  title: 'goDive',
                   name: 'goDive',
                   apiId: '013ca1ba-2e6c-4245-83fb-6922b5b48a7a'
                 }
@@ -33,15 +33,15 @@ export default {
             value: 'https://github.com/Thymas1/goDive',
             category: 'Code'
           },
-          { title: 'Frontend', value: 'https://goDive.netlify.com', category: 'apps' }
+          {title: 'Frontend', value: 'https://goDive.netlify.com', category: 'apps'}
         ]
       }
     },
-    { name: 'project-users', layout: { height: 'auto' } },
+    {name: 'project-users', layout: {height: 'auto'}},
     {
       name: 'document-list',
-      options: { title: 'Recent blog posts', order: '_createdAt desc', types: ['post'] },
-      layout: { width: 'medium' }
+      options: {title: 'Recent posts', order: '_createdAt desc', types: ['post']},
+      layout: {width: 'medium'}
     }
   ]
 }

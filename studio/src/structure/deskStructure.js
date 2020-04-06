@@ -58,7 +58,7 @@ export default () =>
         ),
       S.divider(),
       S.listItem()
-        .title('Blog posts')
+        .title('Posts')
         .icon(MdDescription)
         .schemaType('post')
         .child(S.documentTypeList('post').title('Blog posts')),
@@ -70,8 +70,8 @@ export default () =>
       S.listItem()
         .title('Categories')
         .icon(MdLocalOffer)
-        .schemaType('category')
-        .child(S.documentTypeList('category').title('Categories')),
+        .schemaType('location')
+        .child(S.documentTypeList('location').title('locations')),
       // `S.documentTypeListItems()` returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above.

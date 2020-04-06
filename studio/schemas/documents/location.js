@@ -1,7 +1,7 @@
 export default {
-  name: 'category',
+  name: 'location',
   type: 'document',
-  title: 'Category',
+  title: 'Location',
   fields: [
     {
       name: 'title',

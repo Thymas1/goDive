@@ -3,7 +3,7 @@ import {format} from 'date-fns'
 export default {
   name: 'post',
   type: 'document',
-  title: 'Blog Post',
+  title: 'Post',
   fields: [
     {
       name: 'title',
@@ -50,14 +50,14 @@ export default {
       ]
     },
     {
-      name: 'categories',
+      name: 'locations',
       type: 'array',
-      title: 'Categories',
+      title: 'Locations',
       of: [
         {
           type: 'reference',
           to: {
-            type: 'category'
+            type: 'location'
           }
         }
       ]
