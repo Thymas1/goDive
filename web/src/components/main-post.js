@@ -1,6 +1,7 @@
 import React from 'react'
 import {buildImageObj, mapEdgesToNodes} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
+import styled from 'styled-components'
 import PortableText from './portableText'
 
 const MainPost = ({data}) => {
@@ -8,9 +9,9 @@ const MainPost = ({data}) => {
   return (
     <div>
       {readyData.map(mainPost => (
-        <div id={mainPost.id}>
-          <h1>{mainPost.title}</h1>
-          <img
+        <Wrapper id={mainPost.id}>
+          <Heading>{mainPost.title}</Heading>
+          <StyledImg
             src={imageUrlFor(buildImageObj(mainPost.mainImage))
               .width(600)
               .height(Math.floor((9 / 16) * 600))
@@ -20,10 +21,25 @@ const MainPost = ({data}) => {
             alt={mainPost.mainImage.alt}
           />
           <PortableText blocks={mainPost._rawMainBody} />
-        </div>
+        </Wrapper>
       ))}
     </div>
   )
 }
 
 export default MainPost
+
+const StyledImg = styled.img`
+  align-self: center;
+ @media (max-width: 675px) {
+  width: 100%;
+ }
+`
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+`
+const Heading = styled.h1`
+  align-self: center;
+`
