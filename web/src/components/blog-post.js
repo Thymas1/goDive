@@ -10,7 +10,7 @@ import styles from './blog-post.module.css'
 
 function BlogPost (props) {
   const {_rawBody, authors, locations, title, mainImage, publishedAt} = props
-
+  console.log(mainImage)
   console.log(props)
   return (
     <article className={styles.root}>

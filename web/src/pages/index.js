@@ -10,7 +10,7 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import MainPost from '../templates/main-post'
+import MainPost from '../components/main-post'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -42,6 +42,7 @@ export const query = graphql`
       keywords
     }
     posts: allSanityPost(
+      limit: 6
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
@@ -61,12 +62,32 @@ export const query = graphql`
         }
       }
     }
+    mainPost: allSanityMain {
+      edges {
+        node {
+          id
+          title
+          _rawMainBody
+          mainBody {
+            _key
+            _type
+            style
+            list
+          }
+          mainImage {
+            ...SanityImage
+            alt
+          }
+        }
+      }
+    }
   }
+
+
 `
 
 const IndexPage = props => {
   const {data, errors} = props
-  console.log(data)
   if (errors) {
     return (
       <Layout>
@@ -96,7 +117,7 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
       <Container>
-        <MainPost />
+        <MainPost data={data.mainPost} />
         {postNodes && (
           <BlogPostPreviewList
             title='Latest posts'
