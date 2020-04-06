@@ -9,6 +9,7 @@ import author from './documents/author'
 import location from './documents/location'
 import post from './documents/post'
 import siteSettings from './documents/siteSettings'
+import main from './documents/main'
 
 // Object types
 import bodyPortableText from './objects/bodyPortableText'
@@ -29,6 +30,7 @@ export default createSchema({
     siteSettings,
     post,
     location,
+    main,
     author,
     mainImage,
     authorReference,

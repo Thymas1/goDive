@@ -65,9 +65,6 @@
   }
 }
 
-.blockQuote {
-  background: var(--color-very-light-gray);
-}
 
 .responsiveTitle1 {
   font-weight: 600;

@@ -10,6 +10,7 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import MainPost from '../templates/main-post'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -95,10 +96,10 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
+        <MainPost />
         {postNodes && (
           <BlogPostPreviewList
-            title='Latest blog posts'
+            title='Latest posts'
             nodes={postNodes}
             browseMoreHref='/archive/'
           />
