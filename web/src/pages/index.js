@@ -41,7 +41,6 @@ export const query = graphql`
       keywords
     }
     posts: allSanityPost(
-      limit: 6
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
@@ -66,7 +65,7 @@ export const query = graphql`
 
 const IndexPage = props => {
   const {data, errors} = props
-
+  console.log(data)
   if (errors) {
     return (
       <Layout>
