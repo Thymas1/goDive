@@ -12,8 +12,8 @@ const MainPost = ({data}) => {
           <h1>{mainPost.title}</h1>
           <img
             src={imageUrlFor(buildImageObj(mainPost.mainImage))
-              .width(800)
-              .height(Math.floor((9 / 16) * 800))
+              .width(600)
+              .height(Math.floor((9 / 16) * 600))
               .fit('crop')
               .auto('format')
               .url()}
