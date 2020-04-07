@@ -3,6 +3,7 @@ import React from 'react'
 import {buildImageObj} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
 import styled from 'styled-components'
+import {Link} from 'gatsby'
 import PortableText from './portableText'
 import Container from './container'
 import AuthorList from './author-list'
@@ -29,6 +30,7 @@ function BlogPost (props) {
           <MainContent>
             <Title>{title}</Title>
             {_rawBody && <PortableText blocks={_rawBody} />}
+            <StyledLink to={'/'}>Back</StyledLink>
           </MainContent>
           <aside>
             {publishedAt && (
@@ -127,4 +129,10 @@ const Locations = styled.div`
 `
 const LocationsHeadline = styled.h3`
   margin: 0.5rem 0 0;
+`
+const StyledLink = styled(Link)`
+text-decoration: none;
+:hover{
+  color: #3c57ff;
+}
 `
