@@ -10,11 +10,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
         <Link to='/'>{siteTitle}</Link>
       </Branding>
       <StyledNav>
-        <ul>
-          <li>
-            <StyledLink to='/archive/'>Archive</StyledLink>
-          </li>
-        </ul>
+        <StyledLink to='/archive/'>Archive</StyledLink>
       </StyledNav>
     </Wrapper>
   </Root>
@@ -59,13 +55,13 @@ const Branding = styled.div`
 const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
-  ul {
+  a {
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
-  li:hover {
+  a:hover {
       color: #3c57ff;
     }
 `
